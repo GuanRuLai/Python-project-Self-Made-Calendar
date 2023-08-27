@@ -63,7 +63,7 @@ class CalenderGUI:
 
         # Create and configure "Add" button
         add_button = tk.Button(add_window, text = "Add", fg = "black", font = ("helvetica", 10, "bold"), command = self.save_event)
-        add_button.grid(row = 5, column = 0, columnspan = 2, pady = 10) # button step over 2 columns
+        add_button.grid(row = 5, column = 0, columnspan = 2, pady = 10) # the width of the button contains 2 columns
 
     # method of save_event 
     def save_event(self):
@@ -133,6 +133,7 @@ class CalenderGUI:
         self.event_listbox.delete(0, tk.END)
         # insert events into listbox
         for event in self.events:
+            # ensure each inserted event will be inserted after the former one 
             self.event_listbox.insert(tk.END, event.name)
 
 class Event:
